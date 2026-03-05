@@ -79,3 +79,67 @@ window.addEventListener("scroll", () => {
       "linear-gradient(to bottom, rgba(10,10,15,0.95), transparent)";
   }
 });
+
+// ─── Hero Role Text Animation ───────────────────────────
+(function () {
+  const roles = document.querySelectorAll(".hero-role");
+  const wrapper = document.querySelector(".hero-role-animated");
+  if (!roles.length || !wrapper) return;
+
+  let current = 0;
+  const total = roles.length;
+
+  // Measure width by temporarily making role visible off-screen
+  function measureRole(roleEl) {
+    const clone = roleEl.cloneNode(true);
+    clone.style.position = "fixed";
+    clone.style.top = "-9999px";
+    clone.style.left = "-9999px";
+    clone.style.opacity = "1";
+    clone.style.transform = "none";
+    clone.style.visibility = "hidden";
+    clone.style.display = "inline-block";
+    clone.style.whiteSpace = "nowrap";
+    clone.style.fontSize = window.getComputedStyle(roleEl.parentElement).fontSize;
+    clone.style.fontFamily = window.getComputedStyle(roleEl.parentElement).fontFamily;
+    clone.style.fontWeight = window.getComputedStyle(roleEl.parentElement).fontWeight;
+    clone.style.letterSpacing = window.getComputedStyle(roleEl.parentElement).letterSpacing;
+    document.body.appendChild(clone);
+    const w = clone.offsetWidth;
+    document.body.removeChild(clone);
+    return w;
+  }
+
+  function setWidth() {
+    const w = measureRole(roles[current]);
+    wrapper.style.width = (w + 12) + "px"; // +12 for cursor space
+  }
+
+  // Wait for fonts then measure
+  document.fonts.ready.then(() => {
+    setWidth();
+  });
+  window.addEventListener("resize", setWidth);
+
+  setInterval(() => {
+    // Current one exits up
+    roles[current].classList.remove("active");
+    roles[current].classList.add("exit-up");
+
+    // Next one enters
+    const next = (current + 1) % total;
+    roles[next].classList.add("active");
+
+    // Clean up exit class after animation
+    const prev = current;
+    setTimeout(() => {
+      roles[prev].classList.remove("exit-up");
+    }, 600);
+
+    current = next;
+
+    // Update width for new text
+    const w = measureRole(roles[current]);
+    wrapper.style.width = (w + 12) + "px";
+  }, 2500);
+})();

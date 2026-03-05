@@ -18,6 +18,7 @@
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Work</a></li>
+      <li><a href="#photography">Photos</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -28,15 +29,35 @@
   <section class="hero" id="home">
     <div class="hero-bg-orb orb1"></div>
     <div class="hero-bg-orb orb2"></div>
+    <div class="hero-bg-orb orb3"></div>
+    <!-- Floating particles -->
+    <div class="hero-particles">
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
+      <span class="particle p6"></span>
+    </div>
     <div class="hero-layout">
       <div class="hero-content">
         <div class="hero-tag">Available for Freelance &amp; Collaboration</div>
         <h1>
-          Apu Barua<br>
-          <span class="line2">UI UX Designer.</span>
+          <span class="hero-greeting">Hi, I'm</span>
+          <span class="hero-name">Apu Barua <span class="hero-name-highlight">Topu</span></span>
+          <span class="hero-role-wrapper">
+            <span class="hero-role-static">A </span>
+            <span class="hero-role-animated">
+              <span class="hero-role active">UI/UX Designer.</span>
+              <span class="hero-role">Data Scientist.</span>
+              <span class="hero-role">Photographer.</span>
+              <span class="hero-role">Web Designer.</span>
+              <span class="hero-role">ML Enthusiast.</span>
+            </span>
+          </span>
         </h1>
         <p class="hero-desc">
-          UI/UX Designer &amp; CSE student specializing in Data Science — crafting intelligent,
+          CSE student specializing in Data Science — crafting intelligent,
           beautiful digital experiences that bridge design and data.
         </p>
         <div class="hero-actions">
@@ -45,9 +66,34 @@
         </div>
       </div>
       <div class="hero-photo-wrap">
-        <div class="hero-photo-ring">
-          <img src="images/profile.jpg" alt="Apu Barua" class="hero-photo"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;background:var(--surface);border-radius:26px;&quot;>🧑‍💻</div>';">
+        <!-- Orbit rings -->
+        <div class="orbit-ring orbit-ring-1"></div>
+        <div class="orbit-ring orbit-ring-2"></div>
+        <div class="orbit-ring orbit-ring-3"></div>
+        <!-- Orbiting skill badges -->
+        <div class="orbit-badge ob1" data-tooltip="Data Science">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c5cfc" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/></svg>
+        </div>
+        <div class="orbit-badge ob2" data-tooltip="Photography">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d4a8" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <div class="orbit-badge ob3" data-tooltip="UI/UX Design">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+        <div class="orbit-badge ob4" data-tooltip="Machine Learning">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffc83c" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+        </div>
+        <div class="orbit-badge ob5" data-tooltip="Python">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4fc3f7" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6z"/></svg>
+        </div>
+        <div class="orbit-badge ob6" data-tooltip="Web Dev">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e040fb" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+        </div>
+        <!-- Circle photo -->
+        <div class="hero-photo-circle">
+          <div class="hero-photo-inner">
+            <img src="images/profile.jpg" alt="Apu Barua" class="hero-photo" loading="eager">
+          </div>
         </div>
         <div class="hero-photo-glow"></div>
       </div>
@@ -270,6 +316,54 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ Photography ═══ -->
+  <section id="photography" class="photography-section">
+    <div class="section-label reveal">Photography</div>
+    <h2 class="section-title reveal">Through My <span>Lens</span></h2>
+    <p class="section-subtitle reveal">Capturing moments, light, and stories — one frame at a time.</p>
+
+    <div class="photo-gallery reveal">
+      <div class="photo-item photo-tall">
+        <img src="images/photos/photo1.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Urban Light</span>
+        </div>
+      </div>
+      <div class="photo-item photo-wide">
+        <img src="images/photos/photo2.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Golden Hour</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <img src="images/photos/photo3.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Street Stories</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <img src="images/photos/photo4.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Perspective</span>
+        </div>
+      </div>
+      <div class="photo-item photo-tall">
+        <img src="images/photos/photo5.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Silent Frames</span>
+        </div>
+      </div>
+      <div class="photo-item photo-wide">
+        <img src="images/photos/photo6.jpg" alt="Photography by Apu Barua" loading="lazy">
+        <div class="photo-overlay">
+          <span class="photo-caption">Moody Tones</span>
+        </div>
+      </div>
     </div>
   </section>
 
