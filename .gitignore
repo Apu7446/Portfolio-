@@ -10,3 +10,6 @@ desktop.ini
 
 # Misc
 *.log
+
+# Large video files
+Video CV/

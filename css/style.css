@@ -730,6 +730,53 @@ section {
   color: var(--accent);
 }
 
+/* ─── Who Am I ─── */
+.whoami-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.whoami-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.whoami-content {
+  text-align: center;
+}
+
+.whoami-text {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 20px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whoami-text:last-of-type {
+  margin-bottom: 40px;
+}
+
+.whoami-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.whoami-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whoami-btn svg {
+  flex-shrink: 0;
+}
+
 /* ─── Divider ─── */
 .divider {
   height: 1px;
