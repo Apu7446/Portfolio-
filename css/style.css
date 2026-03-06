@@ -3,6 +3,188 @@
    Framework: Flask  |  Author: Apu Barua
    ═══════════════════════════════════════════════════════════ */
 
+/* ─── Game Landing Page ─── */
+.game-landing {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #06060e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.game-landing-hide {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+}
+
+/* Animated stars background */
+.game-landing-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.game-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.game-star:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.game-star:nth-child(2) { top: 25%; left: 80%; animation-delay: 0.5s; width: 3px; height: 3px; }
+.game-star:nth-child(3) { top: 60%; left: 40%; animation-delay: 1s; }
+.game-star:nth-child(4) { top: 75%; left: 70%; animation-delay: 1.5s; width: 3px; height: 3px; }
+.game-star:nth-child(5) { top: 40%; left: 5%; animation-delay: 2s; }
+.game-star:nth-child(6) { top: 85%; left: 90%; animation-delay: 0.8s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.game-landing-header {
+  width: 100%;
+  padding: 40px 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.game-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.game-profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 3px solid;
+  border-image: linear-gradient(135deg, #7c5cfc, #00d4a8) 1;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(124, 92, 252, 0.4);
+}
+
+.game-profile-name {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f0f0f8;
+  letter-spacing: -0.02em;
+}
+
+.game-profile-name span {
+  background: linear-gradient(135deg, #7c5cfc, #00d4a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.game-profile-role {
+  color: #888898;
+  font-size: 0.85rem;
+  font-family: "DM Sans", sans-serif;
+  margin-top: 2px;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.game-title {
+  font-family: "Syne", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f0f0f8;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.game-subtitle {
+  color: #888898;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.game-iframe-wrap {
+  width: 100%;
+  max-width: 920px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(124, 92, 252, 0.3);
+  box-shadow: 0 0 60px rgba(124, 92, 252, 0.15), 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.game-iframe {
+  display: block;
+  width: 100%;
+  height: 650px;
+  border: none;
+  background: #000;
+}
+
+.game-landing-footer {
+  padding: 24px 40px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.game-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  font-size: 1rem;
+  animation: gameBtnPulse 2s ease-in-out infinite;
+}
+
+@keyframes gameBtnPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(124, 92, 252, 0.35); }
+  50% { box-shadow: 0 0 50px rgba(124, 92, 252, 0.6); }
+}
+
+/* Portfolio content hidden until enter */
+.portfolio-content {
+  display: none;
+}
+
+.portfolio-content.portfolio-visible {
+  display: block;
+  animation: fadeUp 0.6s ease both;
+}
+
+@media (max-width: 768px) {
+  .game-landing-header { padding: 24px 16px 12px; }
+  .game-profile { flex-direction: column; text-align: center; gap: 12px; }
+  .game-profile-img { width: 60px; height: 60px; }
+  .game-profile-name { font-size: 1.2rem; }
+  .game-container { padding: 10px 12px; }
+  .game-title { font-size: 1.3rem; }
+  .game-iframe { height: 400px; }
+  .game-landing-footer { padding: 16px 16px 24px; }
+  .game-enter-btn { padding: 14px 28px; font-size: 0.9rem; }
+}
+
 /* ─── CSS Variables ─── */
 :root {
   --bg: #0a0a0f;

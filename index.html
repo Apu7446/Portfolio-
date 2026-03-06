@@ -12,6 +12,45 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- ═══ Game Landing Page ═══ -->
+  <section class="game-landing" id="gameLanding">
+    <div class="game-landing-bg">
+      <div class="game-star"></div><div class="game-star"></div><div class="game-star"></div>
+      <div class="game-star"></div><div class="game-star"></div><div class="game-star"></div>
+    </div>
+    <div class="game-landing-header">
+      <div class="game-profile">
+        <img src="images/profile.jpg" alt="Apu Barua" class="game-profile-img">
+        <div class="game-profile-info">
+          <h1 class="game-profile-name">Apu Barua <span>Topu</span></h1>
+          <p class="game-profile-role">CSE Student &bull; UI/UX Designer &bull; Data Scientist</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-container">
+      <h2 class="game-title">🚀 Space Typing Shooter</h2>
+      <p class="game-subtitle">Type words to destroy aliens! Built with Python &amp; Pygame.</p>
+      <div class="game-iframe-wrap">
+        <iframe 
+          src="https://apu7446.github.io/Game/"
+          width="900" 
+          height="650" 
+          allowfullscreen
+          class="game-iframe">
+        </iframe>
+      </div>
+    </div>
+    <div class="game-landing-footer">
+      <button class="btn btn-primary game-enter-btn" id="enterPortfolio">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Go to Portfolio
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══ Portfolio Content ═══ -->
+  <div id="portfolioContent" class="portfolio-content">
+
   <!-- ═══ Navigation ═══ -->
   <nav>
     <a href="#" class="nav-logo">Apu<span>.</span></a>
@@ -473,6 +512,19 @@
     <span style="color:var(--accent);">Design + Data = Magic</span>
   </footer>
 
+  </div><!-- end portfolioContent -->
+
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('enterPortfolio').addEventListener('click', function() {
+      const landing = document.getElementById('gameLanding');
+      const portfolio = document.getElementById('portfolioContent');
+      landing.classList.add('game-landing-hide');
+      portfolio.classList.add('portfolio-visible');
+      setTimeout(() => {
+        landing.style.display = 'none';
+      }, 600);
+    });
+  </script>
 </body>
 </html>
