@@ -516,11 +516,20 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Hide custom cursor on game landing page
+    const cursorDot = document.getElementById('cursor');
+    const cursorRingEl = document.getElementById('cursorRing');
+    cursorDot.style.display = 'none';
+    cursorRingEl.style.display = 'none';
+
     document.getElementById('enterPortfolio').addEventListener('click', function() {
       const landing = document.getElementById('gameLanding');
       const portfolio = document.getElementById('portfolioContent');
       landing.classList.add('game-landing-hide');
       portfolio.classList.add('portfolio-visible');
+      // Show custom cursor for portfolio
+      cursorDot.style.display = '';
+      cursorRingEl.style.display = '';
       setTimeout(() => {
         landing.style.display = 'none';
       }, 600);

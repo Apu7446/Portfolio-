@@ -292,6 +292,11 @@ body:has(.game-landing:not(.game-landing-hide))::before {
   cursor: none !important;
 }
 
+.game-landing,
+.game-landing * {
+  cursor: default !important;
+}
+
 .cursor {
   width: 10px;
   height: 10px;
@@ -301,7 +306,7 @@ body:has(.game-landing:not(.game-landing-hide))::before {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 10002;
   transform: translate(-50%, -50%);
   transition: width 0.2s, height 0.2s, background 0.2s;
 }
@@ -315,7 +320,7 @@ body:has(.game-landing:not(.game-landing-hide))::before {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10002;
   transform: translate(-50%, -50%);
   transition: width 0.3s, height 0.3s, border-color 0.3s;
 }
