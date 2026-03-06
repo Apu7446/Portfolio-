@@ -1047,6 +1047,9 @@ section {
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
 }
 
 .project-link:hover {
