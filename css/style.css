@@ -7,7 +7,7 @@
 .game-landing {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 10001;
   background: #06060e;
   display: flex;
   flex-direction: column;
@@ -78,10 +78,8 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
-  border: 3px solid;
-  border-image: linear-gradient(135deg, #7c5cfc, #00d4a8) 1;
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(124, 92, 252, 0.4);
+  border: 3px solid #7c5cfc;
+  box-shadow: 0 0 25px rgba(124, 92, 252, 0.4), 0 0 0 2px #00d4a8;
 }
 
 .game-profile-name {
@@ -281,6 +279,12 @@ body::before {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.4;
+}
+
+/* Hide noise overlay when game page is visible */
+.game-landing ~ .portfolio-content ~ body::before,
+body:has(.game-landing:not(.game-landing-hide))::before {
+  z-index: -1;
 }
 
 /* ─── Custom Cursor ─── */
