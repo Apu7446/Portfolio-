@@ -1463,6 +1463,55 @@ footer {
   transform: translateY(30px);
 }
 
+/* ═══ Video CV Section ═══ */
+.videocv-section {
+  padding: 80px 8% 60px;
+  text-align: center;
+}
+
+.videocv-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.videocv-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(124, 92, 252, 0.3);
+  box-shadow: 0 0 40px rgba(124, 92, 252, 0.15), 0 8px 32px rgba(0,0,0,0.4);
+  background: #0a0a14;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.videocv-frame:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 60px rgba(124, 92, 252, 0.25), 0 16px 48px rgba(0,0,0,0.5);
+  border-color: rgba(124, 92, 252, 0.5);
+}
+
+.videocv-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 550px;
+  margin: 8px auto 0;
+  line-height: 1.6;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .hero-layout {
@@ -1532,6 +1581,12 @@ footer {
   }
   .divider {
     margin: 0 24px;
+  }
+  .videocv-frame {
+    max-width: 300px;
+  }
+  .videocv-section {
+    padding: 60px 24px 40px;
   }
   footer {
     padding: 24px;
